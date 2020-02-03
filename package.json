@@ -1,0 +1,77 @@
+{
+  "name": "nodejs-crud-example",
+  "version": "1.0.0",
+  "description": "Simple CRUD REST API using NodeJS",
+  "main": "src/blogposts/drivers/actors/server.js",
+  "bin": {
+    "blogposts": "src/blogposts/drivers/actors/cli.js"
+  },
+  "directories": {
+    "test": "test",
+    "source": "src"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node src/blogposts/drivers/actors/server.js",
+    "start:dev": "nodemon src/blogposts/drivers/actors/server.js",
+    "eslint-check": "node_modules/.bin/eslint --print-config . | eslint-config-prettier-check",
+    "eslint": "node_modules/.bin/eslint src/",
+    "prettier": "prettier --config .prettierrc --write '**/*.js'",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "npm run prettier",
+        "npm run eslint"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabezayunke/nodejs-crud-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cabezayunke/nodejs-crud-example/issues"
+  },
+  "homepage": "https://github.com/cabezayunke/nodejs-crud-example#readme",
+  "dependencies": {
+    "@babel/runtime": "7.8.3",
+    "@koa/cors": "3.0.0",
+    "dotenv": "8.2.0",
+    "http-status-codes": "1.4.0",
+    "joi": "14.3.1",
+    "koa": "2.11.0",
+    "koa-bodyparser": "4.2.1",
+    "koa-helmet": "5.2.0",
+    "koa-router": "8.0.6",
+    "koa2-joi-validate": "0.5.0",
+    "lodash": "4.17.15",
+    "minimist": "1.2.0",
+    "mongoose": "5.8.9",
+    "uuid": "3.4.0",
+    "winston": "3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.20.0",
+    "eslint-plugin-jest": "23.6.0",
+    "eslint-plugin-lodash-fp": "2.2.0-a1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-security": "1.4.0",
+    "eslint-plugin-standard": "4.0.1",
+    "jest": "24.8.0",
+    "lint-staged": "10.0.2",
+    "prettier": "1.19.1",
+    "supertest": "4.0.2"
+  }
+}

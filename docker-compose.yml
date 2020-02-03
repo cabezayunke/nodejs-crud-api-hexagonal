@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  mongo-blogposts:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_USERNAME: blogUser
+      MONGO_INITDB_PASSWORD: blogPassword
+      MONGO_INITDB_DATABASE: blogPostsDemo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./config/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
+      - mongo-blogposts-volume:/adapters/db
+    command: mongod --bind_ip_all
+
+volumes:
+  mongo-blogposts-volume:
