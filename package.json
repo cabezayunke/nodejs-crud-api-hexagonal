@@ -52,7 +52,7 @@
     "koa-router": "8.0.6",
     "koa2-joi-validate": "0.5.0",
     "lodash": "4.17.15",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "mongoose": "5.8.9",
     "uuid": "3.4.0",
     "winston": "3.2.1"
